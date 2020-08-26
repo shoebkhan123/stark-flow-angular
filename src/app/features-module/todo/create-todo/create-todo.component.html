@@ -1,0 +1,20 @@
+  <h3 class="text-center"> {{ this.data? 'Update': 'Add' }} Todo </h3>
+  <form [formGroup]="createTodoForm" class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input type = "text" formControlName = "title" matInput  placeholder="Enter title" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea formControlName = "description" matInput placeholder="Enter description" required>
+      </textarea>
+    </mat-form-field>
+
+    <div class="text-right">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button [disabled] = "createTodoForm.invalid || isSubmit" (click) = "onAddTodo()" mat-raised-button color = "primary">  {{ this.data? 'Update': 'Add' }} </button>
+    </div>
+
+  </form>

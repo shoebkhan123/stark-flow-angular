@@ -1,0 +1,11 @@
+<div *ngIf="isShowSpinner" class="mt-2" align = "center">
+  <mat-spinner [diameter]="30"></mat-spinner>
+</div>
+
+
+
+<mat-card *ngIf="!isShowSpinner" class="mt-2 text-center">
+  <h3> {{ todo.title }} </h3>
+  <mat-divider></mat-divider>
+  <p class="pt-2"> {{ todo.description }} </p>
+</mat-card>

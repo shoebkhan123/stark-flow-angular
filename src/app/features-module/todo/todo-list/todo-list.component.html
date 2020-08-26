@@ -1,0 +1,31 @@
+<div *ngIf="isShowSpinner" class="mt-2" align = "center">
+  <mat-spinner [diameter]="30"></mat-spinner>
+</div>
+
+<div *ngIf="totalTodo == 0 && !isShowSpinner" class="text-center mt-2">
+  <h2> Todo not found! </h2>
+  <button (click) = "onEdit(null)" mat-raised-button color = "primary"> Create Todo </button>
+</div>
+
+<div *ngIf = "totalTodo > 0 && !isShowSpinner">
+  <div class="mt-2" *ngFor="let todo of todoList;">
+    <mat-card class="mb-1">
+      <div class="row">
+        <div class="col-10 main-title">
+            <div  (click) = "navigateToDetail(todo._id)" class="title"> {{todo.title}} </div>
+        </div>
+        <div class="col-2">
+          <span class="p-2" (click) = "onEdit(todo)"  class="material-icons edit"> edit </span>
+          <span (click) = "onDelete(todo._id)" class="material-icons delete"> delete </span>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>
+
+<mat-paginator *ngIf="totalTodo > 10" class="mb-5" [length]="totalTodo"
+              [pageSize]="pageSize"
+              (page)="pagination($event)"
+              >
+</mat-paginator>

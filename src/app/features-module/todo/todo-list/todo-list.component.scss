@@ -1,0 +1,24 @@
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.main-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: #3f5fb5;
+  text-decoration: underline;
+}
+
+.delete {
+  cursor: pointer;
+  color: #f44336 !important;
+}
+
+.edit {
+  cursor: pointer;
+  color: rgb(233, 233, 17) !important;
+}

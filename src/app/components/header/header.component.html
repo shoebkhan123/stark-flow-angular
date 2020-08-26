@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span [routerLink]  = "['/', 'todo', 'list']">Todo App</span>
+  <span class="example-spacer"></span>
+  <button *ngIf="AuthService.isLogin()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon matTooltip = "Add todo"  (click) = "onAdd()">add</mat-icon>
+  </button>
+  <button *ngIf="AuthService.isLogin()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon matTooltip = "Logout" (click) = "onLogout()">person</mat-icon>
+  </button>
+</mat-toolbar>
